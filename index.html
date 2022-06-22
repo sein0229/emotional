@@ -76,16 +76,16 @@
             var image = document.getElementById("my-image")
             const prediction = await model.predict(image, false);
             if(prediction[0].probability > 0.6){
-                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[0].probability.toFixed(2)*100+"확률로 화가 나 있습니다";
+                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[0].probability.toFixed(2)*100+"%확률로 화가 나 있습니다";
             }
             else if(prediction[1].probability > 0.6){
-                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[1].probability.toFixed(2)+"확률로 행복합니다"
+                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[1].probability.toFixed(2)*100+"%확률로 행복합니다"
             }
             else if(prediction[2].probability > 0.6){
-                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[2].probability.toFixed(2)+"확률로 우울합니다"
+                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[2].probability.toFixed(2)*100+"%확률로 우울합니다"
                  }
             else if(prediction[3].probability > 0.6){
-                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[3].probability.toFixed(2)+"확률로 무표정입니다"
+                labelContainer.childNodes[0].innerHTML = "이 사람은"+prediction[3].probability.toFixed(2)*100+"%확률로 무표정입니다"
                  }  
             else{
                 labelContainer.childNodes[0].innerHTML = "이 사람은 알 수 없는 감정을가지고 있어요"
